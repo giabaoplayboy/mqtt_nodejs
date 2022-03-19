@@ -22,17 +22,17 @@ var options = {
 
 var client = mqtt.connect('mqtt://168.138.165.18', options);
 
-const topics = ['PhongKhach/TV', 'PhongKhach/temperature']
+const topics = ['SanVuon/Den','SanVuon/HoBoi','PhongBep/BepDien','PhongBep/TuLanh']
 const data = []
 
-topics.map(topic => {
+
     client.on('connect', () => {
         console.log('Connected')
-        client.subscribe([topic], () => {
-        console.log(`Subscribe to topic '${topic}'`)
+        client.subscribe(topics, (topic) => {
+        console.log(`Subscribe to topic '${topics}'`)
         })
         
-    })
+  
 
     client.on('message', (topic, message) => {
         const item = {

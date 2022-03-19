@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Bar,Line} from 'react-chartjs-2'
 
 function Luongdientieuthu(){
-    const [list, setList] = useState([]);
+    const [list, setList] = useState(undefined);
     useEffect(()=>{
         let mounted = true;
         fetch('http://localhost:3000')
@@ -14,18 +14,32 @@ function Luongdientieuthu(){
       },[])
 
  console.log(list);
-    return(
+    return list ? (
         <div className="chart-electron">
             <Line
             data={{
-                labels:['Jan', 'feb','Mar' ,'Apr','May', 'Jun', 'July','Aug','Sep', 'Oct', 'Nov', 'Dec'],
+                labels:[
+                "Jan", 
+                "feb",
+                "Mar",
+                "Apr",
+                "May", 
+                "Jun", 
+                "July",
+                "Aug",
+                "Sep", 
+                "Oct", 
+                "Nov", 
+                "Dec",
+            ],
                 datasets:[{
                     data:list,
                     backgroundColor:"orange",
                     borderColor:"black",
                     
 
-                }]
+                },
+            ],
             }}
             options ={{
                 scales:{
@@ -36,8 +50,8 @@ function Luongdientieuthu(){
                                 display : true,
 
 
-                            }
-                        }
+                            },
+                        },
                     ],
                     yAxes:[
                         {
@@ -48,15 +62,16 @@ function Luongdientieuthu(){
                             },
                             ticks:{
                                 beginAtZero: true
-                            }
-                        }
-                    ]
-                }
+                            },
+                        },
+                    ],
+                },
             }}
             >
             </Line>
         </div>
-       
+    ) : (
+        <></>   
     )
 }
 export default Luongdientieuthu;
