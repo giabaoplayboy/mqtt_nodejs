@@ -19,18 +19,11 @@ function Luongdientieuthu(){
             <Line
             data={{
                 labels:[
-                "Jan", 
-                "feb",
-                "Mar",
-                "Apr",
-                "May", 
-                "Jun", 
-                "July",
-                "Aug",
-                "Sep", 
-                "Oct", 
-                "Nov", 
-                "Dec",
+                "SanVuon/Den", 
+                "SanVuon/HoBoi",
+                "PhongBep/BepDien",
+                "PhongBep/TuLanh",   
+                "KTTV/EC",          
             ],
                 datasets:[{
                     data:list,
@@ -41,32 +34,7 @@ function Luongdientieuthu(){
                 },
             ],
             }}
-            options ={{
-                scales:{
-                    xAxes:[
-                        {
-                            scaleLabel:{
-                                lableString : 'Month',
-                                display : true,
-
-
-                            },
-                        },
-                    ],
-                    yAxes:[
-                        {
-                            scaleLabel:{
-                                labelString : 'dien nang tieu thu',
-                                display : true,
-
-                            },
-                            ticks:{
-                                beginAtZero: true
-                            },
-                        },
-                    ],
-                },
-            }}
+            
             >
             </Line>
         </div>

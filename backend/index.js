@@ -22,7 +22,7 @@ var options = {
 
 var client = mqtt.connect('mqtt://168.138.165.18', options);
 
-const topics = ['SanVuon/Den','SanVuon/HoBoi','PhongBep/BepDien','PhongBep/TuLanh']
+const topics = ['SanVuon/Den','SanVuon/HoBoi','PhongBep/BepDien','PhongBep/TuLanh','KTTV/EC']
 const data = []
 
 
